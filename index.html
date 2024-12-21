@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O'nlikdan Ikklikka o'tkazish</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 400px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        input, button {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>10 likdan 2 likga o'tish</h1>
+        <input type="number" id="decimalInput" placeholder="O'nlik sonni kiriting">
+        <button onclick="convertToBinary()">O'tkazish</button>
+        <div class="result" id="result"></div>
+    </div>
+    <script>
+        function convertToBinary() {
+            const decimal = document.getElementById('decimalInput').value;
+            if (decimal === '') {
+                document.getElementById('result').innerText = "Iltimos, son kiriting!";
+                return;
+            }
+            const binary = parseInt(decimal, 10).toString(2);
+            document.getElementById('result').innerText = `Ikkilik ko'rinish: ${binary}`;
+        }
+    </script>
+</body>
+</html>
